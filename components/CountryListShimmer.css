@@ -1,0 +1,42 @@
+.countries-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+    justify-content: center; /* Centers cards horizontally */
+    gap: 32px; /* Space between shimmer cards */
+    padding: 20px;
+  }
+  
+  .shimmer {
+    width: 250px; /* Same width as .card */
+    height: 300px; /* Same height as .card */
+    border-radius: 10px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer-animation 1.5s infinite linear;
+  }
+  .country-name{
+    width: 20px;
+    height: 20px;
+  }
+  
+  @keyframes shimmer-animation {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  /* Fix hover issue */
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 16px 16px rgba(0,0,0,0.2);
+    background-color: rgba(227, 242, 248, 0.788);
+  }
+  
+  @media(max-width:670px) {
+    .card-container {
+      justify-content: center;
+    }
+    .search-division {
+      flex-direction: column;
+    }
+  }
+  
